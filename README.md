@@ -1,8 +1,8 @@
-###Quilibrium Backup Setup
-Introduction
+# Quilibrium Backup Setup
+## Introduction
 This repository contains a script and configuration files to automate the backup of files to Storj using rclone. Follow these steps to set up and run the backup process on your machine.
 
-Prerequisites
+## Prerequisites
 Before starting, ensure you have the following:
 
 A GitHub account
@@ -10,7 +10,7 @@ A Storj account with an access grant and a configured bucket
 rclone installed on your machine
 Basic familiarity with using the terminal
 Step-by-Step Setup Guide
-1. Clone the Repository
+## 1. Clone the Repository
 Clone this repository to your local machine to get the backup scripts and configuration files.
 
 Open your terminal.
@@ -19,14 +19,18 @@ Run the following command to clone the repository:
 
 
 
-```git clone https://github.com/augustov58/quilibriumBackup.git```
+```bash
+git clone https://github.com/augustov58/quilibriumBackup.git 
+```
 
 Navigate to the cloned directory:
 
 
-`cd quilibriumBackup`
+```bash
+cd quilibriumBackup
+```
 
-2. Install and Configure rclone
+## 2. Install and Configure rclone
 Install rclone:
 
 If rclone is not already installed, you can install it using the following commands:
@@ -34,11 +38,12 @@ If rclone is not already installed, you can install it using the following comma
 On Debian/Ubuntu:
 
 
-
+```bash
 sudo apt update
 sudo apt install -y rclone
-On macOS (using Homebrew):
+```
 
+On macOS (using Homebrew):
 
 
 brew install rclone
@@ -58,7 +63,7 @@ Edit the configuration file to add your Storj access grant and bucket name:
 nano ~/.config/rclone/rclone.conf
 Replace the placeholders YOUR_ACCESS_GRANT and YOUR_BUCKET_NAME with your actual Storj credentials. Save and exit the editor.
 
-3. Set Up the Backup Script
+## 3. Set Up the Backup Script
 Make the script executable:
 
 Make sure the backup_to_storj.sh script has executable permissions:
@@ -78,7 +83,7 @@ The destination path on Storj (e.g., storj:bucket/path)
 The time for daily backup in HH:MM format (24-hour clock, e.g., 02:00 for 2:00 AM)
 The script will save these configurations and set up a cron job to run the backup daily at the specified time.
 
-4. Verify the Cron Job
+## 4. Verify the Cron Job
 Check that the cron job is set up correctly:
 
 
@@ -89,7 +94,7 @@ You should see an entry similar to the following:
 00 02 * * * /path/to/your/backup_to_storj.sh
 This indicates that the script will run daily at 2:00 AM. Adjust the time according to the input you provided.
 
-5. Testing and Troubleshooting
+## 5. Testing and Troubleshooting
 Test the backup:
 
 Run the backup script manually to test it:
@@ -104,7 +109,7 @@ The script logs backup activities to a log file (~/backup.log). Review this file
 
 
 cat ~/backup.log
-6. Updating the Script
+## 6. Updating the Script
 If you need to update the script or configuration:
 
 Make the necessary changes to the files.
