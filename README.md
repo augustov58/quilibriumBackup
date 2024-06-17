@@ -45,8 +45,9 @@ sudo apt install -y rclone
 
 On macOS (using Homebrew):
 
-
+```bash
 brew install rclone
+```
 For other operating systems, follow the installation instructions on rclone's official website.
 
 Configure rclone:
@@ -55,12 +56,15 @@ Use the provided template to configure rclone for Storj.
 
 Copy the template configuration file:
 
-
+```bash
 cp rclone.conf.template ~/.config/rclone/rclone.conf
+```
+
 Edit the configuration file to add your Storj access grant and bucket name:
 
-
+```bash
 nano ~/.config/rclone/rclone.conf
+```
 Replace the placeholders YOUR_ACCESS_GRANT and YOUR_BUCKET_NAME with your actual Storj credentials. Save and exit the editor.
 
 ## 3. Set Up the Backup Script
@@ -68,14 +72,17 @@ Make the script executable:
 
 Make sure the backup_to_storj.sh script has executable permissions:
 
-
+```bash
 chmod +x backup_to_storj.sh
+```
 Run the script:
 
 Execute the script to configure your backup:
 
-
+```bash
 ./backup_to_storj.sh
+```
+
 The script will prompt you to enter the following information:
 
 The full path of the directory you want to back up (e.g., /home/user/documents)
@@ -86,8 +93,9 @@ The script will save these configurations and set up a cron job to run the backu
 ## 4. Verify the Cron Job
 Check that the cron job is set up correctly:
 
-
+```bash
 crontab -l
+```
 You should see an entry similar to the following:
 
 
@@ -99,16 +107,19 @@ Test the backup:
 
 Run the backup script manually to test it:
 
-
+```bash
 ./backup_to_storj.sh
+```
 Check the destination on Storj to ensure the files are copied correctly.
 
 Check the log file:
 
 The script logs backup activities to a log file (~/backup.log). Review this file to troubleshoot any issues:
 
-
+```bash
 cat ~/backup.log
+```
+
 ## 6. Updating the Script
 If you need to update the script or configuration:
 
@@ -116,13 +127,15 @@ Make the necessary changes to the files.
 
 Add and commit your changes:
 
-
+```bash
 git add .
 git commit -m "Update backup script"
+```
 Push the changes to GitHub:
 
-
+```bash
 git push origin main
+```
 Additional Information
 Security: Ensure your credentials and access tokens are handled securely. Do not hard-code sensitive information in your scripts or configuration files.
 Cron Job Management: Use crontab -e to edit cron jobs if you need to change the schedule or parameters.
