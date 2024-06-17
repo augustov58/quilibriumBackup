@@ -1,7 +1,4 @@
-
-Certainly! Below is a detailed tutorial for setting up the backup files, which you can include in your README.md file in your GitHub repository. This guide covers cloning the repository, setting up rclone, configuring the backup script, and scheduling the backup process.
-
-Quilibrium Backup Setup
+###Quilibrium Backup Setup
 Introduction
 This repository contains a script and configuration files to automate the backup of files to Storj using rclone. Follow these steps to set up and run the backup process on your machine.
 
@@ -36,14 +33,14 @@ If rclone is not already installed, you can install it using the following comma
 
 On Debian/Ubuntu:
 
-bash
-Copy code
+
+
 sudo apt update
 sudo apt install -y rclone
 On macOS (using Homebrew):
 
-bash
-Copy code
+
+
 brew install rclone
 For other operating systems, follow the installation instructions on rclone's official website.
 
@@ -53,13 +50,11 @@ Use the provided template to configure rclone for Storj.
 
 Copy the template configuration file:
 
-bash
-Copy code
+
 cp rclone.conf.template ~/.config/rclone/rclone.conf
 Edit the configuration file to add your Storj access grant and bucket name:
 
-bash
-Copy code
+
 nano ~/.config/rclone/rclone.conf
 Replace the placeholders YOUR_ACCESS_GRANT and YOUR_BUCKET_NAME with your actual Storj credentials. Save and exit the editor.
 
@@ -68,15 +63,13 @@ Make the script executable:
 
 Make sure the backup_to_storj.sh script has executable permissions:
 
-bash
-Copy code
+
 chmod +x backup_to_storj.sh
 Run the script:
 
 Execute the script to configure your backup:
 
-bash
-Copy code
+
 ./backup_to_storj.sh
 The script will prompt you to enter the following information:
 
@@ -88,13 +81,11 @@ The script will save these configurations and set up a cron job to run the backu
 4. Verify the Cron Job
 Check that the cron job is set up correctly:
 
-bash
-Copy code
+
 crontab -l
 You should see an entry similar to the following:
 
-bash
-Copy code
+
 00 02 * * * /path/to/your/backup_to_storj.sh
 This indicates that the script will run daily at 2:00 AM. Adjust the time according to the input you provided.
 
@@ -103,8 +94,7 @@ Test the backup:
 
 Run the backup script manually to test it:
 
-bash
-Copy code
+
 ./backup_to_storj.sh
 Check the destination on Storj to ensure the files are copied correctly.
 
@@ -112,8 +102,7 @@ Check the log file:
 
 The script logs backup activities to a log file (~/backup.log). Review this file to troubleshoot any issues:
 
-bash
-Copy code
+
 cat ~/backup.log
 6. Updating the Script
 If you need to update the script or configuration:
@@ -122,14 +111,12 @@ Make the necessary changes to the files.
 
 Add and commit your changes:
 
-bash
-Copy code
+
 git add .
 git commit -m "Update backup script"
 Push the changes to GitHub:
 
-bash
-Copy code
+
 git push origin main
 Additional Information
 Security: Ensure your credentials and access tokens are handled securely. Do not hard-code sensitive information in your scripts or configuration files.
