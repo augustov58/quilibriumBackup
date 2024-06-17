@@ -5,17 +5,18 @@ This repository contains a script and configuration files to automate the backup
 ## Prerequisites
 Before starting, ensure you have the following:
 
-A GitHub account
+
 A Storj account with an access grant and a configured bucket
-rclone installed on your machine
+rclone installed on your machine. For more information on storej setup refer to their [documentation](https://docs.storj.io/dcs/getting-started)
 Basic familiarity with using the terminal
 Step-by-Step Setup Guide
+
 ## 1. Clone the Repository
 Clone this repository to your local machine to get the backup scripts and configuration files.
 
 Open your terminal.
 
-Run the following command to clone the repository:
+Run the following command to clone the repository in home folder:
 
 
 
@@ -40,7 +41,7 @@ On Debian/Ubuntu:
 
 ```bash
 sudo apt update
-sudo apt install -y rclone
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
 ```
 
 On macOS (using Homebrew):
@@ -65,7 +66,7 @@ Edit the configuration file to add your Storj access grant and bucket name:
 ```bash
 nano ~/.config/rclone/rclone.conf
 ```
-Replace the placeholders YOUR_ACCESS_GRANT and YOUR_BUCKET_NAME with your actual Storj credentials. Save and exit the editor.
+Replace the placeholders access_key and secret_key with your actual Storj credentials. Save and exit the editor.
 
 ## 3. Set Up the Backup Script
 Make the script executable:

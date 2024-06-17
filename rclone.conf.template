@@ -1,0 +1,8 @@
+[storj]
+type = s3
+provider = Storj
+access_key_id =  access_key # REPLACE ME
+secret_access_key = secret_key  # REPLACE ME
+endpoint = gateway.storjshare.io
+chunk_size = 64Mi
+disable_checksum: true
