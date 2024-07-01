@@ -121,26 +121,10 @@ The script logs backup activities to a log file (~/backup.log). Review this file
 cat ~/backup.log
 ```
 
-## 6. Updating the Script
-If you need to update the script or configuration:
-
-Make the necessary changes to the files.
-
-Add and commit your changes:
-
-```bash
-git add .
-git commit -m "Update backup script"
-```
-Push the changes to GitHub:
-
-```bash
-git push origin main
-```
 Additional Information
 Security: Ensure your credentials and access tokens are handled securely. Do not hard-code sensitive information in your scripts or configuration files.
-Cron Job Management: Use crontab -e to edit cron jobs if you need to change the schedule or parameters.
-Repository Maintenance: Regularly update your repository to include any changes or improvements to the backup process.
+Cron Job Management: Use crontab -e to edit cron jobs if you need to change the schedule.
+
 Conclusion
 By following this guide, you should have successfully set up an automated backup process to Storj using rclone. Your files will now be securely backed up on a daily basis, ensuring that your data is protected and easily recoverable.
 
