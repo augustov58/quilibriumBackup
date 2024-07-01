@@ -122,10 +122,12 @@ cat ~/backup.log
 ```
 
 Additional Information
+
 Security: Ensure your credentials and access tokens are handled securely. Do not hard-code sensitive information in your scripts or configuration files.
 Cron Job Management: Use crontab -e to edit cron jobs if you need to change the schedule.
 
 Conclusion
+
 By following this guide, you should have successfully set up an automated backup process to Storj using rclone. Your files will now be securely backed up on a daily basis, ensuring that your data is protected and easily recoverable.
 
 For any further assistance or issues, please refer to the rclone documentation or contact the repository maintainer.
